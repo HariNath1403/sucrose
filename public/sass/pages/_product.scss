@@ -1,0 +1,108 @@
+.product {
+  background-color: $color-main;
+
+  &__header {
+    margin-top: $space-standard;
+    @include secHeader;
+    color: $color-main;
+    background-color: $color-tint;
+  }
+
+  &__container {
+    background-color: $color-main;
+    padding: 0 0 $space-small 0;
+    &:last-child {
+      padding: 0 0 $space-decent 0;
+    }
+
+    &--header {
+      @include secHeader;
+      text-align: left;
+      color: $color-tint;
+      margin-left: $space-small;
+      padding: $space-gap 0 $space-small 0;
+    }
+
+    &--row {
+      @include flexBoxRow;
+      justify-content: flex-start;
+      padding: 0 $space-small;
+      gap: $space-small;
+      overflow-x: scroll;
+      width: 100%;
+      height: $cardHeight;
+      // margin-top: $space-small;
+      position: relative;
+    }
+
+    &--box {
+      padding: $space-mini $space-supersmall;
+      background-color: $color-tint;
+      @include flexBoxCol;
+      flex: 0 0 17.5rem;
+      height: 25rem;
+      gap: $space-supersmall;
+
+      &--img {
+        width: $space-widegap;
+        height: auto;
+        margin-bottom: $space-mini;
+      }
+
+      &--name {
+        font-size: $text-small;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      &--price {
+        font-size: $text-standard;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-align: center;
+        color: $color-accent-dark;
+
+        &--old {
+          font-size: $text-mini;
+          text-decoration: line-through;
+          transform: translate(-$space-sub, -$space-supersmall) rotate(-15deg);
+        }
+
+        &--promo {
+          transform: translate($space-mini, -$space-small);
+          color: $color-accent-light;
+          background-color: $color-main;
+          padding: $space-supersmall;
+        }
+      }
+
+      &--validity {
+        color: $color-shade;
+        font-size: calc(#{$text-mini + $text-supersmall}/ 2);
+        margin-top: -$space-small;
+      }
+    }
+
+    &--spinner {
+      @include flexBoxRow;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      background-color: $color-grey;
+      height: 100%;
+      width: 100%;
+
+      &--icon {
+        width: 40px;
+        height: 40px;
+        border: 5px solid #f3f3f3; /* Light gray border */
+        border-top: 5px solid #3498db; /* Blue border */
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+    }
+  }
+}

@@ -1,0 +1,592 @@
+.login {
+  background-color: $color-tint;
+  height: 85vh;
+  position: relative;
+
+  &__exit {
+    position: absolute;
+    top: -$space-gap;
+    right: $space-small;
+
+    &--btn {
+      @include exitBtn;
+    }
+  }
+
+  &__header {
+    @include flexBoxCol;
+    gap: $space-small;
+    margin: $space-margin 0 $space-standard 0;
+
+    &--main {
+      font-size: calc(#{$text-header-main + $text-header-sub}/ 2);
+      font-weight: 700;
+      @include flexBoxRow;
+
+      img {
+        width: calc(#{$text-header-main + $text-header-sub}/ 2);
+        height: auto;
+      }
+    }
+
+    &--sub {
+      font-size: $text-standard;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+  }
+
+  &__form {
+    padding: $space-standard $space-small;
+    background-color: $color-main;
+    background-color: $color-accent-dark;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.075);
+    @include flexBoxCol;
+    align-items: flex-end;
+
+    gap: $space-gap;
+
+    &--row {
+      @include flexBoxRow;
+      gap: $space-mini;
+    }
+
+    &--label {
+      font-size: $text-small;
+      color: $color-shade;
+      color: $color-tint;
+      font-weight: 700;
+    }
+
+    &--input {
+      padding: $space-supersmall;
+      font-size: inherit;
+      font-family: inherit;
+      font-weight: 500;
+      color: $color-tint;
+      color: $color-accent-dark;
+      background-color: $color-main;
+      background-color: $color-tint;
+      border: none;
+      width: 20rem;
+
+      &::placeholder {
+        color: inherit;
+        font-family: inherit;
+      }
+    }
+
+    &--submit {
+      align-self: center;
+      margin-top: $space-small;
+
+      &--btn {
+        @include flexBoxRow;
+        gap: $space-supersmall;
+        @include commandBtns;
+        background-color: $color-main;
+        background-color: $color-tint;
+        color: $color-main;
+        font-size: calc(#{$text-standard + $text-small}/ 2);
+        letter-spacing: 1.6px;
+
+        img {
+          width: $text-emphasize;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+.interface {
+  display: none;
+  padding: $space-standard 0;
+  background-color: $color-accent-dark;
+  background-color: $color-main;
+  position: relative;
+
+  &__welcome {
+    font-size: $text-small;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-accent-light;
+    color: $color-tint;
+    text-align: center;
+    margin-bottom: $space-gap;
+    @include flexBoxRow;
+    gap: $space-supersmall;
+
+    &--img {
+      height: $space-standard;
+      width: auto;
+    }
+  }
+
+  &__exit {
+    position: absolute;
+    top: $space-small;
+    right: $space-small;
+
+    &--btn {
+      border: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+      background-color: $color-alert;
+      color: $color-tint;
+      padding: $space-supersmall $space-mini;
+      font-size: calc(#{$text-small + $text-standard}/ 2);
+      font-weight: 700;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    color: $color-tint;
+    margin-bottom: $space-gap;
+  }
+
+  &__header {
+    font-size: $text-emphasize;
+    font-weight: 700;
+    margin-bottom: $space-small;
+    padding: $space-mini 0;
+    padding-left: $space-sub;
+    background-color: $color-tint;
+    color: $color-main;
+    text-transform: uppercase;
+  }
+
+  &__search {
+    align-self: flex-end;
+    padding: 0 $space-mini;
+    @include flexBoxRow;
+    gap: $space-mini;
+    margin-bottom: $space-small;
+
+    &--input {
+      padding: calc(#{$space-mini + $space-supersmall}/ 2);
+      padding: $space-supersmall;
+      background-color: $color-accent-light;
+      color: $color-main;
+      font-family: inherit;
+      width: calc(#{$space-big}* 1.25);
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        font-family: inherit;
+        color: inherit;
+      }
+    }
+
+    &--btn {
+      font-size: $text-small;
+      padding: $space-supersmall $space-mini;
+      background-color: $color-shade;
+      background-color: $color-accent-dark;
+      border: none;
+      border-radius: 3px;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+
+      img {
+        width: $text-small;
+        height: auto;
+      }
+    }
+  }
+
+  &__listbox {
+    height: calc(#{$cardHeight});
+    overflow-y: scroll;
+    background-color: $color-tint;
+    color: $color-main;
+    @include flexBoxRow;
+    padding: $space-sub 0;
+    position: relative;
+
+    &--instruction {
+      font-weight: 400;
+      font-size: $text-supersmall;
+      text-align: right;
+      position: absolute;
+      top: $space-mini;
+      right: $space-mini;
+      color: $color-accent-dark;
+    }
+
+    &--table {
+      align-self: flex-start;
+      width: 95%;
+      border-collapse: collapse;
+
+      &--header {
+        font-weight: 700;
+        color: $color-tint;
+        background-color: $color-main;
+        background-color: $color-shade;
+
+        &--name {
+          width: 57.5%;
+        }
+
+        &--price {
+          width: 30%;
+        }
+      }
+
+      th,
+      td {
+        border: 0.5rem solid $color-shade;
+        padding: $space-supersmall;
+        font-size: $text-mini;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      &--link {
+        transition: all 0.3s;
+
+        &:hover,
+        &:active {
+          background-color: $color-accent-dark;
+          color: $color-tint;
+        }
+      }
+    }
+  }
+
+  &__commands {
+    @include flexBoxCol;
+    gap: $space-sub;
+
+    &--btn {
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+      border: 0;
+      border-radius: 3px;
+      padding: $space-mini $space-small;
+      font-size: $text-small;
+      width: calc(#{$space-big}* 1.25);
+
+      &--new {
+        background-color: $color-accent-light;
+        color: $color-main;
+      }
+
+      &--change,
+      &--newuser {
+        background-color: $color-alert;
+        background-color: $color-accent-dark;
+        color: $color-tint;
+      }
+    }
+  }
+}
+
+.catalogue {
+  @include formPlaceholder;
+  background-color: $color-accent-light;
+  color: $color-shade;
+  height: 105vh;
+
+  &__exit {
+    @include exitBtnPlaceHolder;
+
+    &--btn {
+      @include exitBtn;
+    }
+  }
+
+  &__header {
+    @include formHeader;
+    color: $color-shade;
+  }
+
+  &__container {
+    @include formContainer;
+  }
+
+  &__label {
+    @include formLabel;
+  }
+
+  &__input {
+    @include formInput;
+    background-color: $color-tint;
+    color: $color-main;
+
+    &:focus {
+      background-color: $color-accent-dark;
+      color: $color-tint;
+    }
+
+    &--textarea {
+      @include formInput;
+      width: 75%;
+      background-color: $color-tint;
+      color: $color-main;
+
+      &:focus {
+        background-color: $color-accent-dark;
+        color: $color-tint;
+      }
+    }
+
+    &--merge {
+      input {
+        width: 50%;
+        text-align: right;
+      }
+    }
+  }
+
+  &__radio {
+    @include radioFormat;
+
+    &--row {
+      @include radioRows;
+    }
+  }
+
+  &__command {
+    @include commandArea;
+
+    &--btn {
+      @include commandBtns;
+
+      &--hide {
+        display: none;
+      }
+
+      &--clear {
+        background-color: $color-alert;
+      }
+    }
+  }
+}
+
+.configure {
+  @include formPlaceholder;
+  background-color: $color-accent-dark;
+  color: $color-tint;
+
+  &__exit {
+    @include exitBtnPlaceHolder;
+
+    &--btn {
+      @include exitBtn;
+    }
+  }
+
+  &__header {
+    @include formHeader;
+    margin-top: $space-sub;
+    margin-bottom: $space-small;
+    color: $color-tint;
+  }
+
+  &__container {
+    @include formContainer;
+    row-gap: calc(#{$space-small + $space-sub}/ 2);
+  }
+
+  &__label {
+    @include formLabel;
+  }
+
+  &__input {
+    @include formInput;
+    background-color: $color-tint;
+    color: $color-main;
+    width: 75%;
+
+    &:focus {
+      background-color: $color-accent-light;
+      color: $color-main;
+    }
+
+    &--textarea {
+      @include formInput;
+      width: 85%;
+      background-color: $color-tint;
+      color: $color-main;
+
+      &:focus {
+        background-color: $color-accent-light;
+        color: $color-main;
+      }
+    }
+  }
+
+  &__profile {
+    @include commandArea;
+    @include flexBoxCol;
+    border-top: 0.2rem solid $color-tint;
+    border-bottom: 0.2rem solid $color-tint;
+    padding: $space-small $space-mini;
+
+    &--box {
+      @include flexBoxRow;
+      gap: $space-small;
+      padding-bottom: $space-small;
+    }
+    &--icon {
+      width: calc(#{$space-standard + $space-margin}/ 2);
+      height: auto;
+    }
+  }
+
+  &__command {
+    @include commandArea;
+
+    &--btn {
+      @include commandBtns;
+
+      &--save {
+        background-color: $color-accent-light;
+        color: $color-main;
+      }
+
+      &--clear {
+        background-color: $color-alert;
+      }
+    }
+  }
+}
+
+.container {
+  position: relative;
+}
+
+.error {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba($color-black, 0.75);
+  padding: $space-widegap $space-small $space-gap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+
+  &__box {
+    padding: $space-small;
+    background-color: $color-alert;
+    position: relative;
+  }
+
+  &__header {
+    color: $color-tint;
+    font-size: $text-standard;
+    font-weight: 700;
+    margin-bottom: $space-standard;
+  }
+
+  &__text {
+    color: $color-tint;
+    list-style: none;
+
+    &--line {
+      margin-left: $space-mini;
+      margin-bottom: $space-small;
+    }
+  }
+
+  &__exit {
+    position: absolute;
+    top: $space-small;
+    right: $space-mini;
+
+    &--btn {
+      padding: $space-supersmall $space-mini;
+      background-color: $color-tint;
+      color: $color-alert;
+      font-weight: 700;
+      border: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    }
+  }
+}
+
+.user {
+  // height: 100vh;
+  display: none;
+  background-color: $color-accent-dark;
+  padding: $space-decent 0;
+
+  &__exit {
+    position: absolute;
+    top: $space-sub;
+    right: $space-sub;
+
+    &--btn {
+      padding: $space-supersmall $space-mini;
+      background-color: $color-alert;
+      color: $color-tint;
+      font-weight: 700;
+      border: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    }
+  }
+
+  &__form {
+    padding: $space-standard $space-small $space-small;
+    background-color: $color-tint;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    justify-content: space-around;
+    align-items: center;
+    row-gap: $space-gap;
+    font-size: calc(#{$text-mini + $text-small}/ 2);
+    font-weight: 500;
+
+    &--label {
+      width: 75%;
+      font-weight: 500;
+    }
+
+    &--input {
+      width: 100%;
+      padding: $space-supersmall $space-mini;
+      font-size: inherit;
+      font-family: inherit;
+      color: $color-tint;
+      background-color: $color-main;
+      border: none;
+    }
+
+    &--row {
+      grid-column: span 2;
+
+      &--cta {
+        @include flexBoxRow;
+      }
+    }
+
+    &--images {
+      margin-top: $space-mini;
+      padding: $space-mini $space-small;
+      background-color: $color-main;
+      @include flexBoxRow;
+      justify-content: space-evenly;
+
+      &--icon {
+        width: $space-standard;
+        height: auto;
+      }
+    }
+
+    &--submit {
+      @include commandBtns;
+      margin-top: $space-sub;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+
+      &--hide {
+        display: none;
+      }
+    }
+  }
+}

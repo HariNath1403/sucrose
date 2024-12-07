@@ -1,0 +1,86 @@
+.footer {
+  padding: $space-small $space-mini;
+  background-color: $color-main;
+
+  &__header {
+    @include secHeader;
+    color: $color-tint;
+    margin: $space-small 0;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > div {
+      width: 40%;
+    }
+  }
+
+  &__contacts {
+    margin-left: $space-supersmall;
+
+    &--list {
+      display: flex;
+      flex-direction: column;
+      gap: $space-small;
+    }
+
+    &--row {
+      display: flex;
+      align-items: center;
+      gap: $space-mini;
+    }
+
+    &--img {
+      height: calc(#{$space-small + $space-mini}/ 2);
+      width: auto;
+    }
+
+    &--link {
+      color: $color-tint;
+      text-decoration: none;
+      font-size: $text-mini;
+    }
+  }
+
+  &__admin {
+    &--list {
+      display: flex;
+      flex-direction: column;
+      gap: $space-small;
+    }
+
+    &--row {
+      display: flex;
+      align-items: center;
+      gap: $space-mini;
+    }
+
+    &--img {
+      height: calc(#{$space-small + $space-mini}/ 2);
+      width: auto;
+    }
+
+    &--link,
+    p {
+      color: $color-tint;
+      text-decoration: none;
+      font-size: $text-mini;
+    }
+  }
+
+  &__footer {
+    @include flexBoxRow;
+    margin-top: $space-gap;
+
+    &--text {
+      font-size: $text-supersmall;
+      font-weight: 300;
+      color: $color-tint;
+      letter-spacing: 2.65px;
+      text-transform: uppercase;
+    }
+  }
+}

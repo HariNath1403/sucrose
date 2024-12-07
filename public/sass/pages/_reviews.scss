@@ -1,0 +1,79 @@
+.reviews {
+  padding: $space-gap $space-sub $space-standard;
+  @include flexBoxCol;
+
+  &__header {
+    @include secHeader;
+    color: $color-main;
+    margin-bottom: $space-gap;
+  }
+
+  &__scroll {
+    @include flexBoxCol;
+    gap: $space-sub;
+    justify-content: flex-start;
+    height: calc(#{$cardHeight}* 2);
+    width: 100%;
+    overflow-y: scroll;
+    padding: $space-small 0;
+    // background-color: $color-testing;
+    border: 0.5rem solid $color-grey;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 0.5rem solid $color-shade;
+    padding: $space-small;
+    height: 40%;
+
+    &--alt {
+      background-color: $color-main;
+    }
+
+    &--text {
+      text-align: left;
+      margin-bottom: $space-mini;
+
+      &--alt {
+        color: $color-tint;
+      }
+
+      &--header {
+        font-size: $text-small;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: $space-mini;
+      }
+
+      &--content {
+        text-align: justify;
+        line-height: 1.6;
+        font-size: calc(#{$text-mini + $text-supersmall}/ 2);
+        font-weight: 300;
+      }
+    }
+
+    &--caption {
+      @include flexBoxRow;
+      gap: $space-small;
+      justify-content: flex-end;
+
+      &--alt {
+        color: $color-tint;
+      }
+
+      &--img {
+        width: calc(#{$space-gap + $space-standard}/ 2);
+        height: auto;
+        // border: 0.1rem solid $color-main;
+      }
+
+      &--name {
+        font-size: $text-mini;
+        font-weight: 500;
+      }
+    }
+  }
+}

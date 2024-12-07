@@ -1,0 +1,127 @@
+.home {
+  &__nav {
+    padding: $space-supersmall $space-small;
+    background-color: $color-main;
+    @include flexBoxRow;
+    justify-content: space-between;
+
+    &--logo {
+      &--img {
+        width: calc(#{$space-standard + $space-gap}/ 2);
+        width: $space-standard;
+        height: auto;
+      }
+    }
+
+    &--header {
+      color: $color-tint;
+      h2 {
+        @include flexBoxCol;
+        gap: $space-supersmall;
+        text-align: center;
+      }
+      &--main {
+        font-weight: 800;
+        text-transform: uppercase;
+        transform: scale(1.15);
+        @include flexBoxRow;
+        gap: calc(#{$space-supersmall}/ 5);
+
+        img {
+          width: calc(#{$text-emphasize + $text-big}/ 2);
+          height: auto;
+        }
+      }
+      &--sub {
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: $text-supersmall;
+        letter-spacing: 1.5px;
+      }
+    }
+
+    &--hamburger {
+      margin-right: $space-supersmall;
+      &--icon {
+        font-size: calc(#{$text-header-sub + $text-big}/ 2);
+        color: $color-tint;
+      }
+    }
+  }
+
+  &__img {
+    @include flexBoxRow;
+    margin-top: $space-small;
+    padding: $space-small 0;
+    position: relative;
+
+    &--background {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__main {
+    @include flexBoxCol;
+
+    &--header {
+      @include flexBoxCol;
+      gap: $space-small;
+      margin-top: $space-gap;
+      color: $color-shade;
+
+      &--main {
+        font-size: $text-header-main;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+
+        span {
+          display: inline-block;
+        }
+
+        img {
+          height: $text-header-main;
+          width: auto;
+          transform: translateY(-$space-supersmall) scale(1.1);
+        }
+      }
+
+      &--sub {
+        font-size: $text-small;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+      }
+    }
+
+    &--description {
+      @include flexBoxCol;
+      gap: $space-sub;
+      text-align: center;
+      margin: $space-gap 0;
+
+      &--tagline {
+        font-size: $text-standard;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 3.5px;
+        font-style: italic;
+        color: $color-tint;
+        background-color: $color-main;
+        padding: $space-mini $space-sub;
+        // display: block;
+        width: 100%;
+      }
+
+      &--txt {
+        padding: $space-mini $space-small;
+        margin: 0 $space-small;
+        line-height: 1.6;
+        font-size: calc(#{text-small + $text-mini}/ 2);
+        font-style: italic;
+        text-align: justify;
+      }
+    }
+  }
+}

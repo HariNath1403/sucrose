@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/images/icon.png" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Sucrose | Admin Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="login" id="login">
+        <div class="login__exit">
+          <button class="login__exit--btn">X</button>
+        </div>
+        <div class="login__header">
+          <h2 class="login__header--main">
+            <span>Sucr</span>
+            <img src="images/icon.png" alt="Logo" />
+            <span>se</span>
+          </h2>
+          <h2 class="login__header--sub">By Selina</h2>
+        </div>
+        <form action="#" class="login__form">
+          <div class="login__form--row">
+            <label for="login-username" class="login__form--label"
+              >Username</label
+            >
+            <input
+              type="text"
+              class="login__form--input"
+              placeholder="Input name"
+              id="login-username"
+            />
+          </div>
+          <div class="login__form--row">
+            <label for="login-password" class="login__form--label"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="login__form--input"
+              placeholder="Input password"
+              id="login-password"
+            />
+          </div>
+          <div class="login__form--submit">
+            <button class="login__form--submit--btn">
+              <span>Login</span>
+              <img src="images/icon.png" alt="Logo" />
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="container">
+      <div class="interface" id="interface">
+        <h2 class="interface__welcome" id="admin-user">
+          <span>Welcome</span>
+          <span>Hari</span>
+          <img
+            src="images/user/kola.png"
+            alt="user profile"
+            class="interface__welcome--img"
+          />
+        </h2>
+        <div class="interface__container interface__cookies">
+          <h2 class="interface__header">1. Cookies</h2>
+          <div class="interface__search">
+            <input
+              type="text"
+              class="interface__search--input"
+              id="search-input-cookies"
+              placeholder="Input name"
+            />
+            <button class="interface__search--btn" id="search-btn-cookies">
+              <img src="images/search-icon.png" alt="search icon" />
+            </button>
+          </div>
+          <div class="interface__listbox">
+            <p class="interface__listbox--instruction">
+              *Click on the name column to edit
+            </p>
+            <table class="interface__listbox--table" id="listbox-cookies">
+              <div id="spinner" class="listbox__container--spinner">
+                <div class="product__container--spinner--icon"></div>
+              </div>
+              <thead class="interface__listbox--table--header">
+                <th class="interface__listbox--table--header--no">No</th>
+                <th class="interface__listbox--table--header--name">Name</th>
+                <th class="interface__listbox--table--header--price">Price</th>
+              </thead>
+              <tbody class="interface__listbox--table--body"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="interface__container interface__cookies">
+          <h2 class="interface__header">2. Others</h2>
+          <div class="interface__search">
+            <input
+              type="text"
+              class="interface__search--input"
+              id="search-input-cakes"
+              placeholder="Input name"
+            />
+            <button class="interface__search--btn" id="search-btn-cakes">
+              <img src="images/search-icon.png" alt="search icon" />
+            </button>
+          </div>
+          <div class="interface__listbox">
+            <p class="interface__listbox--instruction">
+              *Click on the name column to edit
+            </p>
+            <table class="interface__listbox--table" id="listbox-cakes">
+              <div id="spinner" class="listbox__container--spinner">
+                <div class="product__container--spinner--icon"></div>
+              </div>
+              <thead class="interface__listbox--table--header">
+                <th class="interface__listbox--table--header--no">No</th>
+                <th class="interface__listbox--table--header--name">Name</th>
+                <th class="interface__listbox--table--header--price">Price</th>
+              </thead>
+              <tbody class="interface__listbox--table--body">
+                <tr>
+                  <td>1</td>
+                  <td
+                    class="interface__listbox--table--link"
+                    data-name="spooky-bites"
+                  >
+                    Spooky Bites
+                  </td>
+                  <td>RM30</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td
+                    class="interface__listbox--table--link"
+                    data-name="classic-delight"
+                  >
+                    Classic Delight
+                  </td>
+                  <td>RM30</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td
+                    class="interface__listbox--table--link"
+                    data-name="nutty-bliss"
+                  >
+                    Nutty Bliss
+                  </td>
+                  <td>RM30</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="interface__container interface__cookies">
+          <h2 class="interface__header">3. Inactive Items</h2>
+          <div class="interface__search">
+            <input
+              type="text"
+              class="interface__search--input"
+              id="search-input-inactive"
+              placeholder="Input name"
+            />
+            <button class="interface__search--btn" id="search-btn-inactive">
+              <img src="images/search-icon.png" alt="search icon" />
+            </button>
+          </div>
+          <div class="interface__listbox">
+            <p class="interface__listbox--instruction">
+              *Click on the name column to edit
+            </p>
+            <table class="interface__listbox--table" id="listbox-inactive">
+              <div id="spinner" class="listbox__container--spinner">
+                <div class="product__container--spinner--icon"></div>
+              </div>
+              <thead class="interface__listbox--table--header">
+                <th class="interface__listbox--table--header--no">No</th>
+                <th class="interface__listbox--table--header--name">Name</th>
+                <th class="interface__listbox--table--header--price">Price</th>
+              </thead>
+              <tbody class="interface__listbox--table--body">
+                <tr>
+                  <td>1</td>
+                  <td
+                    class="interface__listbox--table--link"
+                    data-name="spooky-bites"
+                  >
+                    Spooky Bites
+                  </td>
+                  <td>RM30</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td
+                    class="interface__listbox--table--link"
+                    data-name="classic-delight"
+                  >
+                    Classic Delight
+                  </td>
+                  <td>RM30</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td
+                    class="interface__listbox--table--link"
+                    data-name="nutty-bliss"
+                  >
+                    Nutty Bliss
+                  </td>
+                  <td>RM30</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="interface__commands">
+          <button
+            class="interface__commands--btn interface__commands--btn--new"
+          >
+            Add 1 New Item
+          </button>
+          <button
+            class="interface__commands--btn interface__commands--btn--change"
+          >
+            Change User Info
+          </button>
+          <button
+            class="interface__commands--btn interface__commands--btn--newuser"
+          >
+            Add New Admin
+          </button>
+        </div>
+        <div class="interface__exit">
+          <button class="interface__exit--btn">X</button>
+        </div>
+      </div>
+      <div class="catalogue" id="catalogue">
+        <div class="catalogue__exit">
+          <button class="catalogue__exit--btn">X</button>
+        </div>
+        <h2 class="catalogue__header">Add 1 New Item</h2>
+        <form
+          action="/upload"
+          method="POST"
+          enctype="multipart/form-data"
+          class="catalogue__container"
+        >
+          <label for="new-prod-name" class="catalogue__label">Item Name*</label>
+          <input type="text" class="catalogue__input" id="new-prod-name" />
+          <label for="new-prod-type" class="catalogue__label">Type*</label>
+          <div class="catalogue__radio">
+            <div class="catalogue__radio--row">
+              <input type="radio" id="cookies" name="type" value="Cookies" />
+              <label for="cookies">Cookies</label>
+            </div>
+
+            <div class="catalogue__radio--row">
+              <input type="radio" id="cakes" name="type" value="Cakes" />
+              <label for="cakes">Cakes</label>
+            </div>
+
+            <div class="catalogue__radio--row">
+              <input type="radio" id="pastries" name="type" value="Pastries" />
+              <label for="pastries">Pastries</label>
+            </div>
+
+            <div class="catalogue__radio--row">
+              <input type="radio" id="others" name="type" value="Others" />
+              <label for="others">Others</label>
+            </div>
+          </div>
+          <label for="new-prod-desc" class="catalogue__label"
+            >Description*</label
+          >
+          <textarea
+            class="catalogue__input--textarea"
+            id="new-prod-desc"
+            rows="3"
+          ></textarea>
+          <label for="new-prod-add" class="catalogue__label">Additional</label>
+          <textarea
+            class="catalogue__input--textarea"
+            id="new-prod-add"
+            rows="3"
+          ></textarea>
+
+          <label for="new-prod-price" class="catalogue__label"
+            >Price (RM)*</label
+          >
+          <input type="number" class="catalogue__input" id="new-prod-price" />
+          <label for="new-prod-discount" class="catalogue__label"
+            >Discount</label
+          >
+          <div class="catalogue__input--merge">
+            <input
+              type="number"
+              id="new-prod-discount"
+              class="catalogue__input"
+            />
+            <span>%</span>
+          </div>
+          <label for="new-prod-start-discount" class="catalogue__label"
+            >Discount Start Date</label
+          >
+          <input
+            type="date"
+            id="new-prod-start-discount"
+            class="catalogue__input"
+          />
+          <label for="new-prod-end-discount" class="catalogue__label"
+            >Discount End Date</label
+          >
+          <input
+            type="date"
+            class="catalogue__input"
+            id="new-prod-end-discount"
+          />
+          <label for="new-prod-image" class="catalogue__label">Image*</label>
+          <input
+            type="file"
+            class="catalogue__input--img"
+            id="new-prod-image"
+            name="product-image"
+            accept="image/*"
+          />
+          <label
+            for="new-prod-image"
+            class="catalogue__label"
+            id="img-preview-label"
+            >Current Image</label
+          >
+          <img
+            src="images/sample/classic-delight.png"
+            alt="Image"
+            id="img-preview-img"
+          />
+
+          <label for="new-prod-status" class="catalogue__label">Status</label>
+          <div class="catalogue__radio">
+            <div class="catalogue__radio--row">
+              <input
+                type="radio"
+                id="prod-active"
+                name="status"
+                value="active"
+                checked
+              />
+              <label for="prod-active">Active</label>
+            </div>
+
+            <div class="catalogue__radio--row">
+              <input
+                type="radio"
+                id="prod-inactive"
+                name="status"
+                value="inactive"
+              />
+              <label for="inactive">Inactive</label>
+            </div>
+          </div>
+          <div class="catalogue__command">
+            <button
+              class="catalogue__command--btn catalogue__command--btn--save"
+            >
+              Save
+            </button>
+            <button
+              class="catalogue__command--btn catalogue__command--btn--update"
+            >
+              Update
+            </button>
+            <button
+              class="catalogue__command--btn catalogue__command--btn--clear"
+            >
+              Clear
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="configure" id="configure">
+        <div class="configure__exit">
+          <button class="configure__exit--btn">X</button>
+        </div>
+        <h2 class="configure__header">Change User Information</h2>
+        <form action="#" class="configure__container">
+          <label for="user-name" class="configure__label">User Name</label>
+          <input type="text" class="configure__input" id="user-name" />
+          <label for="user-password" class="configure__label">Password</label>
+          <input type="password" class="configure__input" id="user-password" />
+          <label for="user-confirm-password" class="configure__label"
+            >Confirm Password</label
+          >
+          <input
+            type="password"
+            class="configure__input"
+            id="user-confirm-password"
+          />
+          <label for="user-desc" class="configure__label">Description</label>
+          <textarea
+            class="configure__input--textarea"
+            id="user-desc"
+          ></textarea>
+          <div class="configure__profile">
+            <h3 class="configire__profile--header">Profile Picture</h3>
+            <div class="configure__profile--box">
+              <img
+                src="images/user/active-kola.png"
+                data-profile="kola"
+                class="configure__profile--icon"
+              />
+              <img
+                src="images/user/star.png"
+                data-profile="star"
+                class="configure__profile--icon"
+              />
+              <img
+                src="images/user/boat.png"
+                data-profile="boat"
+                class="configure__profile--icon"
+              />
+              <img
+                src="images/user/mask.png"
+                data-profile="mask"
+                class="configure__profile--icon"
+              />
+              <img
+                src="images/user/rocket.png"
+                data-profile="rocket"
+                class="configure__profile--icon"
+              />
+            </div>
+          </div>
+          <div class="configure__command">
+            <button
+              class="configure__command--btn configure__command--btn--save"
+            >
+              Save
+            </button>
+            <button
+              class="configure__command--btn configure__command--btn--clear"
+            >
+              Clear
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="user" id="new-user">
+        <div class="user__exit">
+          <button class="user__exit--btn">X</button>
+        </div>
+        <div class="user__form">
+          <label for="admin-name" class="user__form--label">Name</label>
+          <input type="text" class="user__form--input" id="admin-name" />
+          <label for="admin-desc" class="user__form--label">Description </label>
+          <textarea
+            name="admin-desc"
+            id="admin-desc"
+            class="user__form--input"
+          ></textarea>
+          <label for="admin-password" class="user__form--label">Password</label>
+          <input
+            type="password"
+            class="user__form--input"
+            id="admin-password"
+          />
+          <label for="admin-password-confirm" class="user__form--label"
+            >Confirm Password
+          </label>
+          <input
+            type="password"
+            class="user__form--input"
+            id="admin-password-confirm"
+          />
+          <div class="user__form--row">
+            <h3 class="user__form--label">Image</h3>
+            <div class="user__form--images">
+              <img
+                src="images/user/active-kola.png"
+                alt="Logo"
+                data-img="kola.png"
+                class="user__form--images--icon user__form--images--icon--active"
+              />
+              <img
+                src="images/user/star.png"
+                alt="Logo"
+                data-img="star.png"
+                class="user__form--images--icon"
+              />
+              <img
+                src="images/user/boat.png"
+                alt="Logo"
+                data-img="boat.png"
+                class="user__form--images--icon"
+              />
+              <img
+                src="images/user/mask.png"
+                alt="Logo"
+                data-img="mask.png"
+                class="user__form--images--icon"
+              />
+              <img
+                src="images/user/rocket.png"
+                alt="Logo"
+                data-img="rocket.png"
+                class="user__form--images--icon"
+              />
+            </div>
+          </div>
+          <label
+            for="admin-password-master"
+            class="user__form--label user__form--create"
+            >Admin Password
+          </label>
+          <input
+            type="password"
+            class="user__form--input user__form--create"
+            id="admin-password-master"
+          />
+          <div class="user__form--row user__form--row--cta">
+            <button class="user__form--submit" id="user-create">Create</button>
+            <button class="user__form--submit" id="user-update">Update</button>
+          </div>
+        </div>
+      </div>
+      <div class="spinner" id="form-spinner" style="display: none">
+        <div class="spinner__overlay">
+          <div class="spinner__icon"></div>
+        </div>
+      </div>
+      <div class="error" id="form-error">
+        <div class="error__box">
+          <h2 class="error__header">Validation Error</h2>
+          <ol class="error__text">
+            <li class="error__text--line">
+              Price: A price is required for the product.
+            </li>
+            <li class="error__text--line">
+              Image: An image is required for the product.
+            </li>
+          </ol>
+          <div class="error__exit">
+            <button class="error__exit--btn">X</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/admin.js" type="module" defer></script>
+  </body>
+</html>

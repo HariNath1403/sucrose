@@ -1,0 +1,150 @@
+// Flex box
+@mixin flexBoxCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexBoxRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+// Header
+@mixin secHeader {
+  font-size: $text-emphasize;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: $space-small 0;
+  text-align: center;
+}
+
+// Spinner Animation
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Spinner for Forms
+.spinner {
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.8
+    ); /* Semi-transparent background */
+    backdrop-filter: blur(8px); /* Blurs the content underneath */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  &__icon {
+    border: 8px solid rgba(0, 0, 0, 0.1); /* Light border */
+    border-top: 8px solid #3498db; /* Blue spinning part */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+  }
+}
+
+// User Form Elements
+@mixin formPlaceholder {
+  position: relative;
+  padding: $space-small;
+  height: 100vh;
+}
+
+@mixin exitBtnPlaceHolder {
+  position: absolute;
+  top: $space-small;
+  right: $space-small;
+}
+
+@mixin exitBtn {
+  background-color: $color-alert;
+  color: $color-tint;
+  border: none;
+  box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+  padding: $space-supersmall $space-mini;
+}
+
+@mixin formHeader {
+  @include secHeader;
+  font-size: $text-standard;
+  padding: $space-mini 0 0 0;
+}
+
+@mixin formContainer {
+  display: grid;
+  grid-template-columns: 1fr 1.75fr;
+  column-gap: $space-mini;
+  row-gap: $space-small;
+  align-items: center;
+  padding: $space-small $space-supersmall;
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  font-size: $text-mini;
+  font-weight: 500;
+}
+
+@mixin formLabel {
+  font-weight: 600;
+}
+
+@mixin formInput {
+  width: 65%;
+  padding: calc(#{$space-supersmall}/ 2);
+  border: none;
+}
+
+@mixin radioFormat {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-mini;
+  width: 75%;
+  border-top: 0.2rem solid $color-main;
+  border-bottom: 0.2rem solid $color-main;
+  padding: $space-mini 0;
+}
+
+@mixin radioRows {
+  display: flex;
+  align-items: center;
+  gap: $space-supersmall;
+}
+
+@mixin commandArea {
+  grid-column: span 2;
+  @include flexBoxRow;
+  justify-content: center;
+  gap: $space-gap;
+  margin-top: $space-small;
+}
+
+@mixin commandBtns {
+  padding: $space-mini $space-small;
+  background-color: $color-accent-dark;
+  color: $color-tint;
+  font-size: $text-small;
+  font-weight: 700;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+}

@@ -1,0 +1,90 @@
+.features {
+  &__header {
+    @include flexBoxRow;
+    margin: $space-small 0;
+    background-color: $color-main;
+
+    &--txt {
+      @include secHeader;
+      color: $color-tint;
+    }
+  }
+
+  &__figure {
+    @include flexBoxCol;
+    gap: $space-standard;
+    margin: $space-standard 0;
+
+    &--main {
+      position: relative;
+      display: inline-block;
+      // box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+
+      &--img {
+        height: calc(#{$space-big} * 2);
+        width: auto;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 98.5%;
+        background-color: $color-main;
+        mix-blend-mode: multiply;
+        opacity: 0.15;
+        pointer-events: none;
+      }
+    }
+
+    &--others {
+      @include flexBoxRow;
+      justify-content: space-around;
+      width: 100%;
+
+      &--img {
+        height: calc(#{$space-decent + $space-margin}/ 2);
+        width: auto;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+      }
+    }
+  }
+
+  &__list {
+    @include flexBoxRow;
+    padding: $space-margin 0;
+    background-color: $color-main;
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      justify-content: center;
+      row-gap: $space-small;
+      column-gap: $space-small;
+      list-style: none;
+      color: $color-tint;
+      margin-left: $space-mini;
+    }
+
+    &--point {
+      @include flexBoxRow;
+      justify-content: flex-start;
+      gap: $space-supersmall;
+      line-height: 1.6;
+
+      &--icon {
+        height: $text-mini;
+        width: auto;
+      }
+
+      &--txt {
+        font-size: $text-mini;
+        // font-weight: 300;
+        font-weight: 400;
+        font-style: italic;
+      }
+    }
+  }
+}

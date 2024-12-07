@@ -1,0 +1,89 @@
+.delivery {
+  padding: $space-gap 0;
+
+  &__header {
+    @include secHeader;
+    background-color: $color-accent-dark;
+    color: $color-tint;
+  }
+
+  &__box {
+    padding: $space-gap $space-sub;
+    // @include flexBoxCol;
+  }
+
+  &__row {
+    &:not(:last-child) {
+      margin-bottom: $space-sub;
+    }
+
+    &--header {
+      @include secHeader;
+      font-size: $text-small;
+      text-align: left;
+      background-image: linear-gradient(
+        to right,
+        $color-main,
+        $color-accent-dark,
+        $color-main
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    &--content {
+      @include flexBoxRow;
+      justify-content: flex-start;
+      text-align: justify;
+      gap: $space-small;
+
+      strong {
+        font-weight: 700;
+        color: $color-main;
+      }
+
+      &--text {
+        font-size: $text-mini;
+        font-weight: 400;
+        color: $color-accent-dark;
+
+        &--contact {
+          color: inherit;
+          text-decoration: underline;
+        }
+
+        &--list {
+          font-size: $text-mini;
+          margin: $space-supersmall 0;
+          margin-left: $space-gap;
+          color: $color-main;
+          font-weight: 600;
+
+          li {
+            &:not(:last-child) {
+              margin-bottom: calc(#{$space-supersmall}/ 2);
+            }
+          }
+        }
+      }
+
+      &--placeholder {
+        width: $space-decent;
+        height: auto;
+        float: left;
+        display: block;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+      }
+
+      &--img {
+        width: $space-decent;
+        height: auto;
+      }
+    }
+  }
+}
